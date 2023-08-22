@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: common-external-ingress
+  namespace: istio-system
+  annotations: {}
+  labels:
+    app: common-external-ingress
+spec:
+  ingressClassName: alb
+  rules:
+  - host: "*.mydomain.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: istio-ingressgateway
+            port:
+              number: 80
