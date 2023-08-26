@@ -12,28 +12,21 @@ helm pull istio/gateway --untar --destination istio-system
 helm pull kiali/kiali-operator --untar --destination istio-system
 ```
 
-Rename folders:
-
-- base to istio-base
-- istiod to istio-istiod
-- gateway to istio-gateway
-- kiali-operator to kiali
-
 Argo will show this names and could be easy to see on argocd.
 
-## istio-base
+## base
 
 values.yaml is used as a reference to create the overlay-values.yaml.
 
 Copy the values.yaml file to overlay-values.yaml as argocd will always look for overlay-values. Do not change anything on this chart.
 
-## istio-istiod
+## istiod
 
 values.yaml is used as a reference to create the overlay-values.yaml.
 
 Copy the values.yaml file to overlay-values.yaml as argocd will always look for overlay-values. Do not change anything on this chart.
 
-## istio-gateway
+## gateway
 
 values.yaml is used as a reference to create the overlay-values.yaml.
 
