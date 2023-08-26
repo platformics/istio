@@ -12,7 +12,7 @@ maintainers:
 - email: kiali-users@googlegroups.com
   name: Kiali
   url: https://kiali.io
-name: kiali-operator
+name: kiali
 sources:
 - https://github.com/kiali/kiali
 - https://github.com/kiali/kiali-operator
