@@ -6,7 +6,7 @@ keywords:
 - istio
 - istiod
 - istio-discovery
-name: istio-istiod
+name: istiod
 sources:
 - http://github.com/istio/istio
 version: 1.17.3
