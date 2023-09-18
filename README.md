@@ -4,12 +4,10 @@ This repo has all necessaries helms to deploy istio and kiali
 
 ```bash
 helm repo add istio https://istio-release.storage.googleapis.com/charts     
-helm repo add kiali https://kiali.org/helm-charts  
 helm repo update
 helm pull istio/base --untar --destination istio-system
 helm pull istio/istiod --untar --destination istio-system
 helm pull istio/gateway --untar --destination istio-system
-helm pull kiali/kiali-operator --untar --destination istio-system
 ```
 
 Argo will show this names and could be easy to see on argocd.
