@@ -1,9 +1,11 @@
 # Name allows overriding the release name. Generally this should not be set
-name: "istio-ingress"
+name: ""
 # revision declares which revision this gateway is a part of
 revision: ""
 
-replicaCount: 1
+# Controls the spec.replicas setting for the Gateway deployment if set.
+# Otherwise defaults to Kubernetes Deployment default (1).
+replicaCount:
 
 kind: Deployment
 
@@ -35,6 +37,7 @@ securityContext: ~
 containerSecurityContext: ~
 
 service:
+  # Type of service. Set to "None" to disable the service entirely
   type: NodePort
   ports:
   - name: status-port
@@ -52,12 +55,6 @@ service:
     protocol: TCP
     targetPort: 443
     nodePort: 31443
-    
-  annotations: {}
-  loadBalancerIP: ""
-  loadBalancerSourceRanges: []
-  externalTrafficPolicy: ""
-  externalIPs: []
 
 resources:
   requests:
@@ -128,3 +125,5 @@ imagePullSecrets: []
 # podDisruptionBudget: {}
 #
 podDisruptionBudget: {}
+
+terminationGracePeriodSeconds: 30
